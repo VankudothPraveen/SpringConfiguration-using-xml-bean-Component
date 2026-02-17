@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="personDao" class="org.example.dao.PersonDaoImpl"/>
+
+    <bean id="personService" class="org.example.Service.PersonServiceImpl">
+        <constructor-arg ref="personDao"/>
+    </bean>
+
+    <bean id="phoneDao" class="org.example.dao.PhoneDaoImpl"/>
+    <bean id="phoneService" class="org.example.Service.PhoneServiceImpl">
+        <constructor-arg ref="phoneDao"/>
+    </bean>
+
+    <bean id="productDao" class="org.example.dao.ProductDaoimpl"/>
+    <bean id="productService" class="org.example.Service.ProductServiceImpl">
+        <constructor-arg ref="productDao"/>
+    </bean>
+
+</beans>
